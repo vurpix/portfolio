@@ -1,0 +1,73 @@
+---
+const skills = [
+  { name: 'HTML5', icon: '🌐' },
+  { name: 'CSS3', icon: '🎨' },
+  { name: 'JavaScript', icon: '⚡' },
+  { name: 'React', icon: '⚛️' },
+  { name: 'Astro', icon: '🚀' },
+  { name: 'Node.js', icon: '🟢' },
+  { name: 'Git', icon: '📦' },
+  { name: 'UI/UX', icon: '✨' },
+];
+---
+
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title">Mis <span class="text-gradient">Habilidades</span></h2>
+    <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+
+    <div class="skills-grid">
+      {skills.map(skill => (
+        <div class="skill-card">
+          <div class="skill-icon">{skill.icon}</div>
+          <h3 class="skill-name">{skill.name}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+    margin-bottom: 3rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-card {
+    background-color: hsl(var(--color-bg-surface));
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    border-color: hsl(var(--color-accent-primary));
+    background-color: hsl(var(--color-bg-highlight));
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+const navItems = [
+  { name: 'Inicio', href: '#hero' },
+  { name: 'Sobre Mí', href: '#about' },
+  { name: 'Proyectos', href: '#projects' },
+  { name: 'Servicios', href: '#services' },
+  { name: 'Contacto', href: '#footer' },
+];
+---
+
+<header class="header">
+  <div class="container header-container">
+    <a href="#" class="logo">
+      Portafolio<span class="dot">.</span>
+    </a>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href} class="nav-link">{item.name}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(10, 10, 11, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem 0;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--color-text-main));
+  }
+
+  .dot {
+    color: hsl(var(--color-accent-primary));
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: hsl(var(--color-text-muted));
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--color-text-main));
+  }
+  
+  @media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Mobile menu implementation deferred for simplicity unless requested */
+    }
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+const experience = [
+  {
+    role: 'Senior Frontend Developer',
+    company: 'Tech Solutions Inc.',
+    date: '2022 - Presente',
+    description: 'Liderazgo de equipo de desarrollo frontend. Implementación de CI/CD y migración a Next.js.'
+  },
+  {
+    role: 'Web Developer',
+    company: 'Digital Agency',
+    date: '2020 - 2022',
+    description: 'Desarrollo de sitios web corporativos y e-commerce para clientes internacionales.'
+  },
+  {
+    role: 'Junior Developer',
+    company: 'StartUp Local',
+    date: '2019 - 2020',
+    description: 'Mantenimiento de aplicaciones web y desarrollo de nuevas funcionalidades con React.'
+  }
+];
+---
+
+<section id="experience" class="section">
+  <div class="container">
+    <h2 class="section-title">Mi <span class="text-gradient">Experiencia</span></h2>
+    
+    <div class="timeline">
+      {experience.map((item, index) => (
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">{item.date}</span>
+            <h3 class="timeline-role">{item.role}</h3>
+            <span class="timeline-company">{item.company}</span>
+            <p class="timeline-description">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  /* Vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, hsl(var(--color-accent-primary)), transparent);
+    
+    /* Center text? No, left aligned timeline for simplicity on mobile, 
+       maybe centered on desktop? let's stick to left aligned for better readability */
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(var(--color-accent-secondary));
+    border-radius: 50%;
+    box-shadow: 0 0 10px hsl(var(--color-accent-secondary));
+  }
+
+  .timeline-date {
+    font-size: 0.85rem;
+    color: hsl(var(--color-accent-primary));
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .timeline-role {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: hsl(var(--color-text-main));
+  }
+
+  .timeline-company {
+    font-size: 1rem;
+    color: hsl(var(--color-text-muted));
+    font-style: italic;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .timeline-description {
+    color: hsl(var(--color-text-muted));
+    line-height: 1.6;
+  }
+</style>

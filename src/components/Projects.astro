@@ -1,0 +1,149 @@
+---
+const projects = [
+  {
+    title: 'E-commerce Dashboard',
+    description: 'Panel de administración completo para gestión de productos, pedidos y usuarios. Incluye gráficos en tiempo real y modo oscuro.',
+    tags: ['React', 'TypeScript', 'Tailwind', 'Chart.js'],
+    image: '', // Placeholder for now or CSS art
+    link: '#',
+    github: '#'
+  },
+  {
+    title: 'App de Gestión de Tareas',
+    description: 'Aplicación colaborativa para manejo de tareas con actualizaciones en tiempo real y soporte offline.',
+    tags: ['Vue 3', 'Firebase', 'PWA'],
+    image: '',
+    link: '#',
+    github: '#'
+  },
+  {
+    title: 'Landing Page Corporativa',
+    description: 'Sitio web estático de alto rendimiento para una consultora financiera, optimizado para SEO.',
+    tags: ['Astro', 'SASS', 'Animation'],
+    image: '',
+    link: '#',
+    github: '#'
+  }
+];
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Mis <span class="text-gradient">Proyectos</span></h2>
+    <p class="section-subtitle">Una selección de mis trabajos recientes</p>
+
+    <div class="projects-grid">
+      {projects.map(project => (
+        <article class="project-card">
+          <div class="project-image">
+            <div class="placeholder-image"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <div class="project-links">
+              <a href={project.link} class="project-link">Ver Demo</a>
+              <a href={project.github} class="project-link github">GitHub</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background-color: hsl(var(--color-bg-surface));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .project-image {
+    height: 200px;
+    background-color: #2a2a2a;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .placeholder-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, hsl(var(--color-bg-highlight)), hsl(var(--color-bg-base)));
+    /* Optional: Add some pattern or overlay */
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: hsl(var(--color-text-main));
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    color: hsl(var(--color-text-muted));
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    color: hsl(var(--color-accent-secondary));
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: hsl(var(--color-accent-primary));
+  }
+  
+  .project-link:hover {
+    text-decoration: underline;
+  }
+  
+  .project-link.github {
+    color: hsl(var(--color-text-muted));
+  }
+  
+  .project-link.github:hover {
+    color: hsl(var(--color-text-main));
+  }
+</style>
