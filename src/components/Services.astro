@@ -1,35 +1,48 @@
 ---
 const services = [
   {
-    title: 'Desarrollo Web',
-    description: 'Sitios web modernos, rápidos y responsivos construidos con las últimas tecnologías.',
-    icon: '💻'
+    title: "Desarrollo Móvil (Flutter)",
+    description:
+      "Apps nativas de alto rendimiento para iOS y Android. Especializado en lógica compleja, conexiones Bluetooth y hardware.",
+    icon: "📱",
   },
   {
-    title: 'Diseño UI/UX',
-    description: 'Interfaces intuitivas y atractivas centradas en la mejor experiencia de usuario.',
-    icon: '🎨'
+    title: "Desarrollo Web Fullstack",
+    description:
+      "Aplicaciones web modernas con React/Next.js y backends robustos en Node.js.",
+    icon: "💻",
   },
   {
-    title: 'Optimización SEO',
-    description: 'Mejora de visibilidad en buscadores para alcanzar a más audiencia.',
-    icon: '📈'
-  }
+    title: "Apps Médicas & IoT",
+    description:
+      "Soluciones especializadas conectando hardware médico vía Bluetooth con aplicaciones móviles para terapias y monitoreo.",
+    icon: "🏥",
+  },
+  {
+    title: "E-commerce & AR",
+    description:
+      "Tiendas virtuales completas con integración de Realidad Aumentada para experiencias de compra inmersivas.",
+    icon: "🛍️",
+  },
 ];
 ---
 
 <section id="services" class="section">
   <div class="container">
-    <h2 class="section-title">Mis <span class="text-gradient">Servicios</span></h2>
-    
+    <h2 class="section-title">
+      Mis <span class="text-gradient">Servicios</span>
+    </h2>
+
     <div class="services-grid">
-      {services.map(service => (
-        <div class="service-card">
-          <div class="service-icon">{service.icon}</div>
-          <h3 class="service-title">{service.title}</h3>
-          <p class="service-description">{service.description}</p>
-        </div>
-      ))}
+      {
+        services.map((service) => (
+          <div class="service-card">
+            <div class="service-icon">{service.icon}</div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-description">{service.description}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

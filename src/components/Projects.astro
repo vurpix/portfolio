@@ -1,63 +1,106 @@
 ---
 const projects = [
   {
-    title: 'E-commerce Dashboard',
-    description: 'Panel de administración completo para gestión de productos, pedidos y usuarios. Incluye gráficos en tiempo real y modo oscuro.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'Chart.js'],
-    image: '', // Placeholder for now or CSS art
-    link: '#',
-    github: '#'
+    title: "CoffiClub – E-commerce de Café",
+    description:
+      "Aplicación móvil desarrollada en Flutter con integración completa a Firebase y backend en Node.js. Incluye pasarela de pagos, manejo de usuarios, carrito de compras, preferencias con Provider/Preferences, arquitectura BLoC, notificaciones push (Firebase FCM) y funcionalidades nativas para Android/iOS.",
+    tags: [
+      "Flutter",
+      "Firebase",
+      "Node.js",
+      "BLoC",
+      "Provider",
+      "FCM",
+      "Mobile",
+    ],
+    image: "",
+    link: "#",
   },
   {
-    title: 'App de Gestión de Tareas',
-    description: 'Aplicación colaborativa para manejo de tareas con actualizaciones en tiempo real y soporte offline.',
-    tags: ['Vue 3', 'Firebase', 'PWA'],
-    image: '',
-    link: '#',
-    github: '#'
+    title: "Alpress – App Médica",
+    description:
+      "App móvil en Flutter con conexión Bluetooth a dispositivo médico para tratar linfedema. Permite iniciar terapias, monitorear progreso en tiempo real, compras in-app e interacción con hardware. Integrada con Firebase, backend Node.js y módulos nativos.",
+    tags: ["Flutter", "Bluetooth", "Firebase", "Node.js", "BLoC", "IoT"],
+    image: "",
+    link: "#",
   },
   {
-    title: 'Landing Page Corporativa',
-    description: 'Sitio web estático de alto rendimiento para una consultora financiera, optimizado para SEO.',
-    tags: ['Astro', 'SASS', 'Animation'],
-    image: '',
-    link: '#',
-    github: '#'
-  }
+    title: "VTight – Suelo Pélvico (Mujer)",
+    description:
+      "App médica en Flutter Bluetooth para terapias de suelo pélvico femenino. Sistema de terapias guiadas, contadores nativos, e-commerce, módulos de pacientes y monitoreo. Integrada con Firebase, FCM, Node.js.",
+    tags: ["Flutter", "Bluetooth", "Firebase", "Node.js", "FCM", "HealthTech"],
+    image: "",
+    link: "#",
+  },
+  {
+    title: "Pmax – Suelo Pélvico (Hombre)",
+    description:
+      "App móvil Flutter Bluetooth para entrenamientos pélvicos masculinos. Seguimiento de terapias, progreso, compras internas, manejo de pacientes y funciones nativas. Backend Node.js y BLoC.",
+    tags: ["Flutter", "Bluetooth", "Firebase", "Node.js", "BLoC"],
+    image: "",
+    link: "#",
+  },
+  {
+    title: "Vitrinea – E-commerce con AR",
+    description:
+      "Ecosistema completo: web Next.js/React, App Flutter y módulo de Realidad Aumentada para probar prendas. Panel administrativo para vendedores, pagos y tracking. Backend Node.js y notificaciones FCM.",
+    tags: ["Next.js", "React", "Flutter", "Node.js", "AR", "Firebase"],
+    image: "",
+    link: "#",
+  },
 ];
 ---
 
 <section id="projects" class="section">
   <div class="container">
-    <h2 class="section-title">Mis <span class="text-gradient">Proyectos</span></h2>
-    <p class="section-subtitle">Una selección de mis trabajos recientes</p>
+    <h2 class="section-title">
+      Mis <span class="text-gradient">Proyectos</span>
+    </h2>
+    <p class="section-subtitle">
+      Desarrollo móvil, médico y soluciones e-commerce
+    </p>
 
     <div class="projects-grid">
-      {projects.map(project => (
-        <article class="project-card">
-          <div class="project-image">
-            <div class="placeholder-image"></div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">{project.title}</h3>
-            <p class="project-description">{project.description}</p>
-            <div class="project-tags">
-              {project.tags.map(tag => (
-                <span class="tag">{tag}</span>
-              ))}
+      {
+        projects.map((project) => (
+          <article class="project-card">
+            <div class="project-image">
+              <div class="placeholder-image" />
             </div>
-            <div class="project-links">
-              <a href={project.link} class="project-link">Ver Demo</a>
-              <a href={project.github} class="project-link github">GitHub</a>
+            <div class="project-content">
+              <h3 class="project-title">{project.title}</h3>
+              <p class="project-description">{project.description}</p>
+              <div class="project-tags">
+                {project.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+              <div class="project-links">
+                <a href={project.link} class="project-link">
+                  Ver Demo
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
 
 <style>
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: hsl(var(--color-text-muted));
+    margin-bottom: 3rem;
+  }
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -68,7 +111,9 @@ const projects = [
     background-color: hsl(var(--color-bg-surface));
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
@@ -84,12 +129,15 @@ const projects = [
     width: 100%;
     overflow: hidden;
   }
-  
+
   .placeholder-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, hsl(var(--color-bg-highlight)), hsl(var(--color-bg-base)));
-    /* Optional: Add some pattern or overlay */
+    background: linear-gradient(
+      45deg,
+      hsl(var(--color-bg-highlight)),
+      hsl(var(--color-bg-base))
+    );
   }
 
   .project-content {
@@ -134,16 +182,8 @@ const projects = [
     font-weight: 600;
     color: hsl(var(--color-accent-primary));
   }
-  
+
   .project-link:hover {
     text-decoration: underline;
-  }
-  
-  .project-link.github {
-    color: hsl(var(--color-text-muted));
-  }
-  
-  .project-link.github:hover {
-    color: hsl(var(--color-text-main));
   }
 </style>
